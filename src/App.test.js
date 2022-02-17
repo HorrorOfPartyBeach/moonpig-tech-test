@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders a list of cards", async () => {
+test("renders a header with an appropriate text title", () => {
   render(<App />);
 
-  await screen.findByRole("list");
-  expect(screen.getByRole("list")).toBeInTheDocument();
+  const header = screen.getByText("Moonpig Card List");
+  expect(header).toBeInTheDocument();
 });
