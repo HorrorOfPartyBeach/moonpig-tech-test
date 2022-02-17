@@ -6,7 +6,6 @@ const List = () => {
 
   const getAllCards = async () => {
     const cards = await fetchAllCards();
-    console.log(cards, "CARDS");
     if (cards) {
       setCardList(cards);
     }
@@ -17,11 +16,25 @@ const List = () => {
   }, []);
 
   return (
-    <ul aria-label="Card List">
-      {cardList?.map((card) => {
-        return <li key={card.MoonpigProductNo}>{card.Title}</li>;
-      })}
-    </ul>
+    <div className="flex">
+      <ul
+        aria-label="Card List"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4"
+      >
+        {cardList?.map((card) => {
+          return (
+            <li className="m-auto">
+              <img
+                className="items-center"
+                key={card.MoonpigProductNo}
+                src={card.ProductImage.Link.Href}
+                alt={card.Title}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 
