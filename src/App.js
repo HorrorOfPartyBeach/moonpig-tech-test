@@ -1,9 +1,10 @@
-import "./App.css";
-
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="flex bg-gray-900 h-24 min-h-full text-3xl text-white flex-col items-center justify-center">
+        Test
+      </header>
+      <main></main>
     </div>
   );
 }
